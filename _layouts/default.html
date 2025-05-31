@@ -1,11 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-  <meta charset="utf-8">
-  <title>Mein Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }}</title>
   <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
+  <header>
+    <div class="container">
+      <h1>Simon Dietz</h1>
+      <nav>
+        <ul>
+          <li><a href="#projects">Projekte</a></li>
+          <li><a href="#about">Über mich</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
   {{ content }}
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 | Made with <span>❤</span> by Passionate Coder</p>
+    </div>
+  </footer>
+<script>
+  function adjustBodyPadding() {
+    const header = document.querySelector("header");
+    document.body.style.paddingTop = header.offsetHeight + "px";
+  }
+
+  window.addEventListener("load", adjustBodyPadding);
+  window.addEventListener("resize", adjustBodyPadding);
+</script>
 </body>
 </html>
